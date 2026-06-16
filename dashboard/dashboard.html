@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 class="logo">TrafficViz</h2>
+
+        <a class="nav-link" onclick="showSection('overview')">Overview</a>
+        <a class="nav-link" onclick="showSection('timeSeries')">Time Series</a>
+        <a class="nav-link" onclick="showSection('heatmap')">Heatmap</a>
+        <a class="nav-link" onclick="showSection('weather')">Weather Impact</a>
+        <a class="nav-link" onclick="showSection('events')">Event Analysis</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="section visible">
+            <h1>Dashboard Overview</h1>
+            <p>
+                This dashboard provides a comprehensive analysis of hourly traffic behavior throughout 2023. 
+                It explores time-based congestion cycles, weather effects, and event-driven spikes. 
+                The purpose is to help decision-makers understand mobility trends and optimize transport planning.
+            </p>
+
+            <h2 style="margin-top: 30px;">Overall Traffic Volume Trend (Yearly Overview)</h2>
+            <p>This chart presents a full-year traffic time series, showing global peaks, dips, and movement patterns.</p>
+            <div id="overviewPlot" class="chart"></div>
+        </section>
+
+        <!-- TIME SERIES -->
+        <section id="timeSeries" class="section">
+            <h1>Hourly Traffic Time Series</h1>
+            <p>
+                This visualization shows how traffic volume fluctuates hour-by-hour across the entire year.
+                It highlights weekday rush hours, weekend behavior, and natural daily cycles.
+            </p>
+            <div id="timeSeriesPlot" class="chart"></div>
+        </section>
+
+        <!-- HEATMAP -->
+        <section id="heatmap" class="section">
+            <h1>Traffic Intensity Heatmap</h1>
+            <p>
+                This heatmap compares hours of the day vs. days of the week to identify high-congestion periods.
+                It helps reveal peak hours, weekend shifts, and consistency in traffic demand.
+            </p>
+            <div id="heatmapPlot" class="chart"></div>
+        </section>
+
+        <!-- WEATHER -->
+        <section id="weather" class="section">
+            <h1>Weather Impact Analysis</h1>
+            <p>
+                Weather conditions influence travel patterns. This scatter plot compares traffic volumes under 
+                Clear, Cloudy, and Rainy weather to show how commuters respond to changing climate conditions.
+            </p>
+            <div id="weatherPlot" class="chart"></div>
+        </section>
+
+        <!-- EVENTS -->
+        <section id="events" class="section">
+            <h1>Event Impact Analysis</h1>
+            <p>
+                Major events (concerts, sports games, holidays) cause notable spikes in traffic.
+                This boxplot visualizes traffic volume differences between event days and normal days.
+            </p>
+            <div id="eventPlot" class="chart"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
